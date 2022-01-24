@@ -1,0 +1,36 @@
+{
+  "name": "Web IndeX",
+  "version": "0.7.1",
+  "manifest_version": 2,
+  "description": "Web index - Join for Web ! - ",
+  "background": {
+    "page":"data/index.html"
+  },
+  "icons": { "48": "data/images/icon48.png",
+          "128": "data/images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["data/includes/jquery.min.js", "data/scripts/ecl.js","data/includes/userscript.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "cookies",
+    "<all_urls>",
+    "storage",
+    "http://trezia.db.ics.keio.ac.jp/"
+  ],
+  "web_accessible_resources": [
+    "data/*"
+  ],
+  "browser_action":{
+    "default_icon":"16.png",
+    "default_title":"popup",
+    "default_popup":"popup2.html"
+  },
+  "content_security_policy":
+  "script-src 'self';object-src 'self'"
+}

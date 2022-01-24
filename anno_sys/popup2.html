@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset='utf-8'>
+    <script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./popgroup.js"></script>
+    <style>
+      ul {
+      	width: 200px;
+      	margin: 0;
+      	padding: 0;
+      	list-style-type: none;
+      	background-color: #eeeeee;
+      }
+      li a {
+      	display: block;
+      	padding: 8px 16px;
+      	text-decoration: none;
+      	color: #000000;
+      }
+      li {
+      	text-align: center;
+      }
+      li:last-child {
+      	border-bottom: none;
+      }
+      li a.active {
+      	color: #ffffff;
+      	background-color: #ff8856;
+      }
+      li a:hover:not(.active) {
+      	color: #ffffff;
+      	background-color: #E3622F;
+      }
+      .cp_iptxt {
+      position: relative;
+      width: 80%;
+      margin: 40px 3%;
+      }
+      .cp_iptxt input[type='text'] {
+      font: 15px/24px sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.3em;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: #000000;
+      border: 1px solid #1b2538;
+      border-radius: 4px;
+      }
+      .ef input[type='text']:focus {
+      border: 1px solid #E3622F;
+      outline: none;
+      box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+      }
+      ol.cp_clist {
+      	counter-reset:cp_clist; /*数字をリセット*/
+      	list-style-type: none;
+      	padding:0.5em;
+      }
+      ol.cp_clist li {
+      	position: relative;
+      	padding-left: 30px;
+      	line-height: 1.5em;
+      	padding: 0.5em 0.5em 0.5em 36px;
+      }
+      ol.cp_clist li::before {
+      	position: absolute;
+      	display:inline-block;
+      	top: 50%;
+      	left: 0;
+      	/* カウントさせる */
+      	counter-increment: cp_clist;
+      	content: counter(cp_clist);
+      	/*装飾*/
+      	padding: 0 0.2em 0 0.2em;
+      	background: #03A9F4;
+      	color: #fff;
+      	font-weight:bold;
+      	font-size: 15px;
+      	border-radius: 50%;
+      	width: 18px;
+      	height: 22px;
+      	line-height: 22px;
+      	text-align:center;
+      	transform: translateY(-50%);
+      }
+      ol.cp_clist li::after {
+      	position: absolute;
+      	content: '';
+      	display: block;
+      	top: 50%;
+      	left: 18px;
+      	height: 0;
+      	width: 0;
+      	border-top: 7px solid transparent;
+      	border-bottom: 7px solid transparent;
+      	border-left: 12px solid #03A9F4;
+      	transform: translateY(-50%);
+      }
+    </style>
+    <title>popup</title>
+  </head>
+  <body>
+    <div id="data"></div>
+    <div id="group"></div>
+    <div id="groupA"></div>
+    <div id="groupB"></div>
+    <div id="groupC"></div>
+    <div id="groupD"></div>
+    <div id="groupE"></div>
+
+    <div id="disp">
+    <input type="text" id="text"></input>
+    <button id="set">Register</button>
+    </div>
+
+    <!-- <script type="text/javascript" src="./popgroup.js"></script> -->
+    <script src="./popgroup2.js"></script>
+
+    <ul>
+    	<li><a id="link3" href="https://trezia.db.ics.keio.ac.jp/saeki/annotation.php">アノテーション登録</a></li>
+    	<li><a id="link4" href="https://trezia.db.ics.keio.ac.jp/saeki/group.php">新規グループ登録</a></li>
+      <li><a id="link2" href="https://trezia.db.ics.keio.ac.jp/saeki/slack.php">グループslack登録</a></li>
+    	<li><a id="link5" href="https://trezia.db.ics.keio.ac.jp/saeki/joingroup.php">グループ参加</a></li>
+      <!-- <li><a id="link6" href="https://trezia.db.ics.keio.ac.jp/saeki/list.php">一覧</a></li> -->
+    </ul>
+  </body>
+</html>
